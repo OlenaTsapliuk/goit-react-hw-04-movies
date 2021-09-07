@@ -6,8 +6,8 @@ function TrendingList({ movies }) {
     <ul>
       {movies.map((movie) => (
         <li key={movie.id}>
-          <Link to={`movies/:${movie.id}`}>
-            {movie.title}/ rating: {movie.vote_average}
+          <Link to={`movies/${movie.id}`}>
+            {movie.title} / rating: {movie.vote_average}
           </Link>
         </li>
       ))}

@@ -1,11 +1,11 @@
 import { fetchOneMovie } from "../services/ApiMovies";
 import { useEffect, useState } from "react";
-import { useRouteMatch, useParams } from "react-router-dom";
-
+import { useRouteMatch, useParams, NavLink, Route } from "react-router-dom";
+import Cast from "./Cast";
 export default function MovieDetails() {
   const [movie, setMovie] = useState(null);
   // const {poster_path,title,vote_average,overview} = movie;
-
+  const { url, path } = useRouteMatch();
   const { movieId } = useParams();
   useEffect(() => {
     fetchOneMovie(movieId).then((movie) => {
@@ -34,6 +34,12 @@ export default function MovieDetails() {
             <h3>Genres</h3>
             <p>{movie.genres.map((genre) => genre.name).join(" , ")}</p>
           </div>
+          <div>
+            <NavLink to={`${url}/cast`}>Cast</NavLink>
+          </div>
+          <Route path={`${path}/cast`}>
+            <Cast movieId={movieId} />
+          </Route>
         </>
       )}
     </>

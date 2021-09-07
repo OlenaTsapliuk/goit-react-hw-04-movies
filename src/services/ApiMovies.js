@@ -19,7 +19,7 @@ export function fetchSearchMovies(searchQuery) {
 
 export function fetchOneMovie(movieId) {
   return apiMoviesWidthError(
-    `${BASE_URL}/movie/${movieId}?api_key=${KEY}&language=en-US`
+    `${BASE_URL}movie/${movieId}?api_key=${KEY}&language=en-US`
   );
 }
 export function fetchCredits(movieId) {
