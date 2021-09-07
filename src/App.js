@@ -9,7 +9,6 @@ import MovieDetails from "./views/MovieDetails";
 import MoviesPage from "./views/MoviesPage";
 
 function App() {
-  const [movie, setMovie] = useState(null);
   return (
     <Container>
       <Navigation />

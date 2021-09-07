@@ -7,7 +7,6 @@ export default function MovieDetails() {
   // const {poster_path,title,vote_average,overview} = movie;
 
   const { movieId } = useParams();
-
   useEffect(() => {
     fetchOneMovie(movieId).then((movie) => {
       setMovie(movie);
@@ -22,7 +21,10 @@ export default function MovieDetails() {
             <button type="button">Go back</button>
           </div>
           <div>
-            <img src={movie.poster_path} alt={movie.title} />
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              alt={movie.title}
+            />
           </div>
           <div>
             <h2>{movie.title}</h2>
