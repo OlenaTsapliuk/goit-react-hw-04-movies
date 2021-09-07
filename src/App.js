@@ -1,22 +1,32 @@
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
+import { useState } from "react";
+// import Appbar from "./Components/AppBar/AppBar";
+import Container from "./Components/Container";
+import Navigation from "./Components/Navigation";
+import HomePage from "./views/HomePage";
+import MovieDetails from "./views/MovieDetails";
+import MoviesPage from "./views/MoviesPage";
 
 function App() {
+  const [movie, setMovie] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Navigation />
+
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+
+        <Route path="/movies" exact>
+          <MoviesPage />
+        </Route>
+        <Route path="/movies/:movieId">
+          <MovieDetails />
+        </Route>
+      </Switch>
+    </Container>
   );
 }
 

@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- https://api.themoviedb.org/3/movie/550?api_key=57d304ecd58f4c0c776a2cf6f2ec46da -->
+
+<!-- https://api.themoviedb.org/3/trending/movie/day?api_key=57d304ecd58f4c0c776a2cf6f2ec46da -->
+<!-- список популярних фильмов -->
+<!-- https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false -->
+<!-- поиск по ключевому слову -->
+<!-- https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US -->
+<!-- запрос полной информации о фильме для страницы кинофильма. -->
+<!-- https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=<<api_key>>&language=en-US -->
+<!-- запрос информации о актёрском составе для страницы кинофильма. -->
+<!-- https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1 -->
+<!-- запрос обзоров для страницы кинофильма. -->
