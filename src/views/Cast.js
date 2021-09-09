@@ -31,3 +31,7 @@ export default function Cast({ movieId }) {
     )
   );
 }
+
+Cast.propTypes = {
+  movieId: PropTypes.string.isRequired,
+};

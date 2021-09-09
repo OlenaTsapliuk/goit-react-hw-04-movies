@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import { useState } from "react";
 // import Appbar from "./Components/AppBar/AppBar";
@@ -24,6 +24,7 @@ function App() {
         <Route path="/movies/:movieId">
           <MovieDetails />
         </Route>
+        <Redirect to="/" />
       </Switch>
     </Container>
   );

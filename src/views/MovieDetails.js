@@ -2,6 +2,8 @@ import { fetchOneMovie } from "../services/ApiMovies";
 import { useEffect, useState } from "react";
 import { useRouteMatch, useParams, NavLink, Route } from "react-router-dom";
 import Cast from "./Cast";
+import Reviews from "./Reviews";
+
 export default function MovieDetails() {
   const [movie, setMovie] = useState(null);
   // const {poster_path,title,vote_average,overview} = movie;
@@ -37,8 +39,16 @@ export default function MovieDetails() {
           <div>
             <NavLink to={`${url}/cast`}>Cast</NavLink>
           </div>
+          <div>
+            <NavLink to={`${url}/reviews`}>Reviews</NavLink>
+          </div>
+
           <Route path={`${path}/cast`}>
             <Cast movieId={movieId} />
+          </Route>
+
+          <Route path={`${path}/reviews`}>
+            <Reviews movieId={movieId} />
           </Route>
         </>
       )}
