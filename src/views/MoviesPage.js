@@ -31,11 +31,6 @@ export default function MoviesPage() {
         })
         .finally(() => {
           setIsLoading(false);
-
-          window.scrollTo({
-            top: document.documentElement.scrollHeight,
-            behavior: "smooth",
-          });
         });
     }
 

@@ -4,6 +4,7 @@ import s from "./MoviesList.module.css";
 
 export default function MoviesList({ movies }) {
   const location = useLocation();
+
   return (
     <ul className={s.list}>
       {movies.map((movie) => (
@@ -13,9 +14,7 @@ export default function MoviesList({ movies }) {
             to={{
               pathname: `movies/${movie.id}`,
               state: {
-                from: {
-                  location,
-                },
+                from: { location },
               },
             }}
           >

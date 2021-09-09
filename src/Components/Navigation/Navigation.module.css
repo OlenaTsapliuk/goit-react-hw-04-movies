@@ -2,9 +2,10 @@
   display: inline-block;
   text-decoration: none;
   padding: 15px;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 18px;
-  color: #151516;
+  color: #03032e;
+  text-shadow: 4px 4px 12px rgba(126, 142, 175, 0.85);
 }
 
 .activeLink {
