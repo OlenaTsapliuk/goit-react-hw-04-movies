@@ -1,5 +1,6 @@
 import { ToastContainer, toast } from "react-toastify";
 import { useState, useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 import { fetchSearchMovies } from "../services/ApiMovies";
 import Spinner from "../Components/Loader/Loader";
 
@@ -10,7 +11,10 @@ export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
   const [movieName, setMovieName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const history = useHistory();
+  const location = useLocation();
 
+  const searchURL = new URLSearchParams(location.search).get("query") ?? "";
   useEffect(() => {
     if (!movieName) {
       return;
@@ -37,8 +41,23 @@ export default function MoviesPage() {
     fetchMovies();
   }, [movieName]);
 
+  useEffect(() => {
+    if (searchURL === "") {
+      return;
+    }
+    setMovieName(searchURL);
+  }, [searchURL]);
+
+  const getHistory = (movieName) => {
+    history.push({
+      ...location,
+      search: `query=${movieName}`,
+    });
+  };
+
   const searchMovie = (movieName) => {
     setMovieName(movieName);
+    getHistory(movieName);
   };
 
   return (

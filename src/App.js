@@ -22,15 +22,14 @@ function App() {
       <Navigation />
       <Suspense fallback={<Spinner />}>
         <Switch>
-          <Route path="/" exact>
-            <HomePage />
+          <Route path="/movies/:movieId">
+            <MovieDetails />
           </Route>
-
           <Route path="/movies" exact>
             <MoviesPage />
           </Route>
-          <Route path="/movies/:movieId">
-            <MovieDetails />
+          <Route path="/" exact>
+            <HomePage />
           </Route>
           <Redirect to="/" />
         </Switch>
